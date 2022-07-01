@@ -10,3 +10,6 @@ if not (hwid and method) then
     return setclipboard(("Unknown Exploit: %s"):format(identifyexecutor()))
 end
 setclipboard(hwid)
+hint = Instance.new("Hint",game.CoreGui)
+hint.Text = "Successfully copied HWID to clipboard"
+delay(5,function() hint:destroy() end)
