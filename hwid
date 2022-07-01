@@ -1,3 +1,4 @@
+local hint = Instance.new("Hint",game.CoreGui)
 local req = (syn and syn.request) or (http and http.request) or http_request or request
 local list = game:GetService("HttpService"):JSONDecode(req({Url="https://httpbin.org/get",Method="GET"}).Body)
 for i,v in ipairs({"SW-Fingerprint","Syn-Fingerprint","Flux-Fingerprint","Krnl-Hwid"}) do
@@ -7,9 +8,9 @@ for i,v in ipairs({"SW-Fingerprint","Syn-Fingerprint","Flux-Fingerprint","Krnl-H
     end
 end
 if not (hwid and method) then
-    return setclipboard(("Unknown Exploit: %s"):format(identifyexecutor()))
+    hint.Text = "Unsupported Exploit - Please read #buy for a list of supported exploits"
+else
+    setclipboard(hwid)
+    hint.Text = "HWID was successfully copied to your clipboard"
 end
-setclipboard(hwid)
-hint = Instance.new("Hint",game.CoreGui)
-hint.Text = "Successfully copied HWID to clipboard"
 delay(5,function() hint:destroy() end)
