@@ -1,7 +1,7 @@
 local hint = Instance.new("Hint",game.CoreGui)
 local req = (syn and syn.request) or (http and http.request) or http_request or request
 local list = game:GetService("HttpService"):JSONDecode(req({Url="https://httpbin.org/get",Method="GET"}).Body)
-for i,v in ipairs({"SW-Fingerprint","Syn-Fingerprint","Flux-Fingerprint","Krnl-Hwid"}) do
+for i,v in ipairs({"Sw-Fingerprint","SW-Fingerprint","Syn-Fingerprint","Flux-Fingerprint","Krnl-Hwid"}) do
     if rawget(list.headers,v) then
         method = v
         hwid = rawget(list.headers,v)
