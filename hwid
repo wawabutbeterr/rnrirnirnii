@@ -11,6 +11,6 @@ if not (hwid and method) then
     hint.Text = "Unsupported Exploit - Please read #buy for a list of supported exploits"
 else
     setclipboard(hwid)
-    hint.Text = "HWID was successfully copied to your clipboard"
+    hint.Text = "Successfully copied your HWID to your clipboard."
 end
 delay(5,function() hint:destroy() end)
